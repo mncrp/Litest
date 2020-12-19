@@ -1,5 +1,5 @@
 Download link
-ダウンロードリンク。なんか知らんけどGitHubには25MB以上のファイルは上げられないようなので、zipとかで圧縮しようとしたが25MN以上になったため断念。
+ダウンロードリンク。なんか知らんけどGitHubには25MB以上のファイルは上げられないようなので、zipとかで圧縮しようとしたが25MB以上になったため断念。
 Google Driveへ。
 
 https://drive.google.com/drive/folders/1Zw_QlawwVA4ITvv8fqxb7w1VUuG78EMC?usp=sharing
