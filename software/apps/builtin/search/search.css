@@ -1,0 +1,47 @@
+body{
+  vertical-align: middle;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+span{
+  display: inline-block;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding-top: calc(50vh - 130px);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+}
+h6{
+  font-size: 7.5px;
+}
+span>h1{
+  font-size: 50px;
+}
+body>a{
+  position: absolute;
+  top: calc(100vh + 5px);
+}
+body>div{
+  position: absolute;
+  bottom: 5px;
+  background-color: #575757;
+  height: 250px;
+  width: 400px;
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+  display: none;
+}
+body>span>input[type="search"]{
+  font-size: 25px;
+  width: 500px;
+  height: 50px;
+}
+body>span>button{
+  height: 50px;
+  font-size: 20px;
+  width: 5rem;
+  padding: 5px 5px 3px 5px;
+}

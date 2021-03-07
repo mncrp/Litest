@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="font/font.css">
+    <link rel="stylesheet" href="style/summary.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="style/timeview.css">
+    <link rel="stylesheet" href="style/dock.css">
+    <title>Litest by monochrome.</title>
+  </head>
+  <body>
+    <header>
+      <header-contents-1>Litest <span>by monochrome.</span></header-contents-1>
+      <header-wrapper-1>
+        <time tabindex="1" title="メニューウィンドウ" onclick="timeview('big')"></time><!--日時と時刻表示-->
+      </header-wrapper-1>
+    </header>
+    <current-window><!--desktop-->
+      <p>Litest by monochrome. Version 2.0 Beta release. Developed by Sorakime.</p>
+      <app-dock><!--dock-->
+        <dock-content data-app="builtin/mncr.search" title="Search"></dock-content>
+        <dock-content data-app="builtin/mncr.calcer" title="Calcer"></dock-content>
+        <dock-content data-app="builtin/mncr.prompt" title="Prompt"></dock-content>
+        <dock-content data-app="builtin/mncr.universal" title="Universal"></dock-content>
+        <!--dock-content data-app="builtin/mncr.setting" title="Setting"></dock-content-->
+      </app-dock>
+    </current-window>
+
+    <timeview-window><!--time-view-->
+      <window-contents>
+        <time tabindex="2" onclick="timeview('small')"></time><hr>
+        <application-view>
+          <h2>アプリケーション</h2>
+          <a href="apps/search.html" target="_blank">Search</a>
+          <a href="apps/calcer.html" target="_blank">Calcer</a>
+          <a href="apps/prompt.html" target="_blank">Prompt</a>
+          <a href="apps/universal.html" target="_blank">Universal</a>
+        </application-view>
+      </window-contents>
+    </timeview-window>
+
+    <!--scripts-->
+    <script src="script/bar.js" charset="utf-8"></script>
+    <script src="script/dockstart.js" charset="utf-8"></script>
+  </body>
+</html>

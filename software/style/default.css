@@ -1,0 +1,79 @@
+@import url('../font/font.css');
+
+/*General*/
+*{
+  margin: 0; padding: 0;
+  font-family: 'NotoS';
+  font-weight: 100;
+  text-decoration: none;
+  outline: none;
+}
+*:focus{
+  outline: none;
+  background-color: inherit;
+}
+
+/*a button*/
+a[data-btn="button"], button{
+  display: inline-block;
+  height: 25px;
+  width: 35px;
+  user-select: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  color: #000;
+  border: 0;
+}
+a[data-btn="natural"]{
+  user-select: none;
+  display: inline-block;
+  color: #000;
+}
+
+/*<input>*/
+input{
+  border: 0.25px solid #565656;
+  border-radius: 5px;
+  width: 150px; height: 25px;
+  font-size: 15px;
+  padding: 5px;
+}
+input[type="search"]{
+  border-radius: 11.75px;
+  width: 250px;
+}
+
+@media (prefers-color-scheme: dark) {
+  a[data-btn="button"], button{
+    display: inline-block;
+    height: 25px;
+    width: 35px;
+    user-select: none;
+    border-radius: 10px;
+    background-color: #222;
+    color: #fff;
+    border: 0;
+  }
+  a[data-btn="natural"]{
+    user-select: none;
+    display: inline-block;
+    color: #fff;
+  }
+  input{
+    border: 0.25px solid #8a8a8a;
+    border-radius: 5px; color: #aaa;
+    width: 150px; height: 25px;
+    font-size: 15px; background-color: #111;
+    padding: 5px;
+  }
+  input[type="search"]{
+    border-radius: 11.75px;
+    width: 250px;
+  }
+  body, html{
+    background-color: #101010;
+  }
+  h1, h2, h3, h4, h5, h6, p, a{
+    color: #d1d1d1;
+  }
+}

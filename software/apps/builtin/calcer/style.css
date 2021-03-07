@@ -1,0 +1,31 @@
+body, html{
+  background-color: #161616;
+}
+calc-output{
+  padding: 15px; overflow: auto; display: block;
+  height: 80px; background-color: #272727;
+  font-size: 50px; color: #e4e4e4; /*石石井氏*/
+}
+button{
+  width: 20vw; height: 15vh; border: 0; margin-top: 3px;
+  border-radius: 15px; background-color: #252525;
+  color: #d6d6d6; overflow: hidden; font-size: 25px;
+}
+button:focus{
+  background-color: #252525;
+}
+button:active{
+  background-color: #111;
+}
+calc-input{
+  user-select: none;
+}
+#zero{
+  width: calc(40vw + 4px);
+}
+
+@media (max-width: 700px) {
+  button{
+    font-size: 20px;
+  }
+}

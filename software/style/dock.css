@@ -1,0 +1,49 @@
+app-dock{
+  display: block;
+  position: fixed;
+  bottom: 1px; left: calc(50vw - 110px); right: calc(50vw - 110px);
+  height: 60px; width: auto;
+  text-align: center;
+  padding-left: 10px;
+  border-radius: 15px;
+  z-index: 9800;
+}
+app-dock::before{
+  content: ''; border-radius: inherit;
+  display: inline-block; position: fixed;
+  bottom: 1px; left: inherit; right: inherit;
+  width: inherit; height: inherit;
+  opacity: 0.5; background-color: #526faf;
+  z-index: 9805;
+}
+dock-content{
+  position: relative;
+  margin-right: 5px;
+  top: 10px;
+}
+dock-content[data-app="builtin/mncr.search"]{
+  background-image: url('../apps/builtin/search/icon.png');
+  background-size: contain;
+  display: inline-block; width: 40px; height: 40px;
+  z-index: 9995;
+}
+dock-content[data-app="builtin/mncr.calcer"]{
+  background-image: url('../apps/builtin/calcer/icon.png');
+  background-size: contain; display: inline-block;
+  width: 40px; height: 40px; z-index: 9995;
+}
+dock-content[data-app="builtin/mncr.prompt"]{
+  background-image: url('../apps/builtin/prompt/icon.png');
+  background-size: contain; display: inline-block;
+  width: 40px; height: 40px; z-index: 9995;
+}
+dock-content[data-app="builtin/mncr.universal"]{
+  background-image: url('../apps/builtin/universal/universal.png');
+  background-size: contain; display: inline-block;
+  width: 40px; height: 40px; z-index: 9995;
+}
+dock-content[data-app="builtin/mncr.setting"]{
+  background-image: url('../apps/builtin/setting/setting.png');
+  background-size: contain; display: inline-block;
+  width: 40px; height: 40px; z-index: 9995;
+}

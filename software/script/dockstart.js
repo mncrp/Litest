@@ -1,0 +1,16 @@
+document.querySelector('dock-content[data-app="builtin/mncr.search"]').addEventListener('click',()=>{
+  window.open('apps/search.html');
+})
+document.querySelector('dock-content[data-app="builtin/mncr.calcer"]').addEventListener('click',()=>{
+	window.open('apps/calcer.html');
+})
+document.querySelector('dock-content[data-app="builtin/mncr.prompt"]').addEventListener('click',()=>{
+  window.open('apps/prompt.html');
+})
+document.querySelector('dock-content[data-app="builtin/mncr.universal"]').addEventListener('click',()=>{
+  window.open('apps/universal.html');
+})/*
+document.querySelector('dock-content[data-app="builtin/mncr.setting"]').addEventListener('click',()=>{
+  window.open('apps/setting.html')
+})
+*/

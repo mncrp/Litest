@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Calcer</title><!--ID:builtin/mncr.calcer-->
+    <link rel="stylesheet" href="../style/default.css">
+    <link rel="stylesheet" href="builtin/calcer/style.css">
+    <script src="builtin/calcer/calc.js"></script>
+</head>
+<body>
+  <calc-output></calc-output><!--出力-->
+  <calc-input><!--入力-->
+		<button onclick="forerase('owt')">Erase</button>
+		<button onclick="discard('all')">Clear</button>
+		<button onclick="forinput('/')">÷</button>
+		<button onclick="forinput('%')">...</button><br>
+		<button onclick="forinput('7')">7</button><!--一段目-->
+    <button onclick="forinput('8')">8</button>
+    <button onclick="forinput('9')">9</button>
+		<button onclick="forinput('*')">×</button><br><!--二段目-->
+		<button onclick="forinput('4')">4</button>
+    <button onclick="forinput('5')">5</button>
+    <button onclick="forinput('6')">6</button>
+		<button onclick="forinput('-')">-</button><br><!--三段目-->
+		<button onclick="forinput('1')">1</button>
+    <button onclick="forinput('2')">2</button>
+    <button onclick="forinput('3')">3</button>
+		<button onclick="forinput('+')">＋</button><br><!--四段目-->
+    <button onclick="forinput('0')" id="zero">0</button>
+		<button onclick="forinput('.')">.</button>
+		<button onclick="math()">=</button>
+  </calc-input>
+</body>
+</html>

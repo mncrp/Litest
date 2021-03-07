@@ -1,0 +1,29 @@
+/*1*/@font-face {
+  font-family: 'NotoS';
+  src: url('NotoSansJP-Thin.otf') format('opentype');
+  font-weight: 100;
+}
+/*2*/@font-face {
+  font-family: 'NotoS';
+  src: url('NotoSansJP-Light.otf') format('opentype');
+  font-weight: 300;
+}
+/*3*/@font-face {
+  font-family: 'NotoS';
+  src: url('NotoSansJP-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+/*4*/@font-face {
+  font-family: 'NotoS';
+  src: url('NotoSansJP-Regular.otf') format('opentype');
+  font-weight: 600;
+}
+/*5*/@font-face {
+  font-family: 'NotoS';
+  src: url('NotoSansJP-Bold.otf') format('oppentype');
+  font-weight: 800;
+}
+/*6*/@font-face {
+  font-family: 'NotoS';
+  src: url('NotoSansJP-Black.otf') format('opentype');
+}

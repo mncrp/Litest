@@ -1,0 +1,30 @@
+timeview-window{
+  display: none;
+  height: calc(100vh - 100px);
+  position: fixed;
+  z-index: 9998!important;
+  top: 42.5px; left: 42.5px; right: 42.5px; bottom: 42.5px;
+  background-color: #fdfdfd;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0px 0px 520px #f0f0f0;
+}
+timeview-window, timeview-window *{
+  user-select: none;
+}
+window-contents{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+timeview-window > window-contents > time{
+  font-size: 70px;
+}
+timeview-window[class="viewing"]{
+  display: inline-block;
+}
+application-view{
+  height: calc(100% - 200px);
+  display: block;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Litest",
+  "version": "2.0.0",
+  "description": "Convenient-software by monochrome. It used Electron by GitHub.",
+  "main": "application.js",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "path": "^0.12.7",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sorakime",
+  "license": "ISC",
+  "build": {
+    "appId": "io.github.sorakime.litest",
+    "mac": {
+      "icon": "software/image/logo.png",
+      "target": "dmg"
+    },
+    "dmg": {
+      "background": "software/image/dmg-back.png"
+    },
+    "win": {
+      "icon": "software/image/logo.png",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "icon": "software/image/logo.png",
+      "target": "appImage"
+    },
+    "appImage": {
+      "synopsis": "Convenient-software by monochrome. It used Electron by GitHub.",
+      "category": "Utility"
+    }
+  }
+}
