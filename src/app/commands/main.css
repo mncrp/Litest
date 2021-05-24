@@ -1,0 +1,28 @@
+@import 'font.css';
+*{
+  font-family: 'Source','Noto Sans JP',monospace,sans-serif;
+  font-weight: 400;
+  color: #d9d9d9;
+  outline: none;
+}
+body{
+  margin: 0; padding: 0;
+  background-color: #000;
+}
+span-1{
+  display: block;
+  font-size: 20px;
+}
+input{
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 20px;
+  height: 25px;
+  padding: 5px;
+  background-color: #000;
+  border: 0;
+  word-wrap: break-word;
+}
+input:focus{
+  background-color: #333;
+}

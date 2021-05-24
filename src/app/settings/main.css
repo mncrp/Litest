@@ -1,0 +1,81 @@
+:root{
+  --background: url('../../image/background-1.png');
+}
+
+*{
+  outline: none;
+}
+
+form-el{
+  display: block;
+  border: 0.5px solid #444;
+  border-radius: 5px;
+  text-align: center!important;
+  background-color: #aaa;
+}
+input{
+  border: none;
+  border: none!important;
+  width: calc(100% + 500px); height: 20px;
+  font-size: 25px; padding-left: 5px;
+  outline: none;
+  font-size: 15px;
+}
+button[type="search"]{
+  border: none!important;
+  background-image: url('./search.png');
+  background-position: center; background-size: 75%;
+  background-repeat: no-repeat;
+  border-radius: 0 15px 15px 0px;
+  width: 30px; height: 50px;
+}
+select{
+  width: 300px;
+  border-radius: 5px;
+  height: 30px;
+  padding: 1px;
+}
+
+aside>div{
+  padding: 10px;
+}
+aside>div>span{
+  display: block;
+  padding: 7.5px;
+  border-radius: 15px;
+  background-color: #999;
+  height: 25px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+  user-select: none;
+}
+
+main{
+  position: relative;
+  top: 50px;
+  display: block;
+  width: auto;
+  padding: 15px;
+}
+general-settings{
+
+}
+div#preview-wallpaper{
+  background: var(--background);
+  background-position: center;
+  background-size: cover;
+  width: 80vmin;
+  height: 45vmin;
+  background-color: #ddd;
+}
+fix-el{
+  width: calc(100% - 18vw - 60px);
+}
+
+@media(max-width: 600px){
+  div#preview-wallpaper{
+    max-width: 512px;
+    max-height: 288px;
+  }
+}

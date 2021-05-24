@@ -1,0 +1,107 @@
+@import "../../style/noto/noto.css";
+
+:root{
+  --background: url('../image/litest-lamina.png');
+}
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+
+html, body, *{
+  font-family: 'Noto Sans JP',sans-serif;
+  font-weight: 200;
+  user-select: none;
+}
+body{
+  background-color: #fff;
+  margin: 0;
+}
+fix-el{
+  background-color: #ffffff44;
+  display: block;
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  z-index: 9000;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  text-align: left;
+  border-radius: 0 0 15px 15px;
+}
+
+code{
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #555;
+  font-family: monospace;
+  font-weight: 300;
+}
+
+form-el{
+  background-color: #fff;
+}
+form-el *{
+  vertical-align: middle;
+}
+
+button:active{
+  background-color: #aaa;
+}
+button:hover{
+  background-color: #dfdfdf;
+}
+
+aside{
+  display: block;
+  width: 18vw;
+  height: calc(100vh - 30px);
+  resize: horizontal;
+  float: left;
+  background-color: #f6f6f6;
+  padding: 15px;
+  z-index: 9999;
+}
+aside input{
+  position: relative;
+  top: -1.25px; left: 0;
+  display: inline-block;
+  width: calc(100% - 33px);
+  height: 23.75px;
+  border-radius: 5px 0 0 5px;
+}
+aside button{
+  position: relative;
+  top: -1.25px; left: 0;
+  border-radius: 0 5px 5px 0!important;
+  width: 26px!important;
+  height: 26px!important;
+}
+aside form-el{
+  padding: 0;
+  height: 26px;
+  background-color: #fff;
+}
+main{
+  display: inline-block;
+  overflow: auto;
+  width: auto;
+  background-color: #fdfdfd;
+}
+main, main *{
+  z-index: 8000;
+}
+
+@media(prefers-color-scheme: dark){
+  html, body, main{
+    color: #fff;
+    background-color: #000;
+  }
+  aside{
+    background-color: #1a1a1a;
+  }
+  select{
+    background-color: #111;
+    color: #ddd;
+  }
+}
