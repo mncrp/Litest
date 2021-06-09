@@ -4,7 +4,7 @@ var calcWin, searchWin, commandsWin, settingsWin;
 
 function neWin(){
   mainWin=new BrowserWindow({
-    width: 850, height: 550, minWidth: 450, minHeight: 200,
+    width: 850, height: 550, minWidth: 520, minHeight: 400,
     backgroundColor: '#fff',
     icon: `${__dirname}/src/image/icon.png`,
     webPreferences: {
@@ -46,8 +46,8 @@ let menu=Menu.buildFromTemplate([
             type: 'info',
             icon: './src/image/icon.png',
             title: 'Litestについて',
-            message: 'Litest 2.0.0 B3A1について',
-            detail: 'バージョン: 2.0.0 B3A1(Beta 3 Alpha 1)\nビルド番号: Build2105.23\n\n開発者: Sorakime\n公式サイト: https://sorakime.github.io/mncr/litest/\nリポジトリ: https://github.com/Sorakime/litest/tree/beta3\n\nCopyright 2021 Sorakime.'
+            message: 'Litest 2.0.0 B3A2について',
+            detail: 'バージョン: 2.0.0 B3A2(Beta 3 Alpha 2)\nビルド番号: Build12\n\n開発者: Sorakime\n公式サイト: https://sorakime.github.io/mncr/litest/\nリポジトリ: https://github.com/Sorakime/litest/tree/2.0b3a2\n\nCopyright 2021 Sorakime.'
           })
         }
       },
@@ -56,7 +56,7 @@ let menu=Menu.buildFromTemplate([
       },
       {
         role: 'reload',
-        label: '再読み込み',
+        label: '再読み込み'
       },
       {
         role: 'forceReload',
@@ -70,13 +70,14 @@ let menu=Menu.buildFromTemplate([
         submenu: [
           {
             role: 'toggleDevTools',
-            label: '開発者向けツール'
+            label: '開発者向けツール',
+            accelerator: 'F12'
           },
           {
             label: 'ソースコードの確認',
             accelerator: 'CmdOrCtrl+Alt+S',
             click: ()=>{
-              shell.openExternal('https://github.com/Sorakime/litest/tree/2.0b3a1')
+              shell.openExternal('https://github.com/Sorakime/litest/tree/2.0b3a2');
             }
           }
         ]

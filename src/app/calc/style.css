@@ -1,0 +1,40 @@
+*{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 200;
+  outline: none;
+}
+body, html{
+  background-color: #161616;
+  padding: 0;
+}
+calc-output{
+  display: block;
+  padding: 15px;
+  height: 60px; margin: 0;
+  font-size: 50px; font-weight: 400;
+  color: #e4e4e4; background-color: #272727;
+  overflow-y: hidden; overflow-x: auto;
+}
+button{
+  width: 20vw; height: 15vh; border: 0; margin-top: 3px;
+  border-radius: 15px; background-color: #252525;
+  color: #d6d6d6; overflow: hidden; font-size: 25px;
+}
+button:focus{
+  background-color: #252525;
+}
+button:active{
+  background-color: #111;
+}
+calc-input{
+  user-select: none;
+}
+#zero{
+  width: calc(40vw + 4px);
+}
+
+@media (max-width: 700px) {
+  button{
+    font-size: 20px;
+  }
+}

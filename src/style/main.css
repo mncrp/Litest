@@ -1,0 +1,221 @@
+@import "./noto/noto.css";
+
+:root{
+  --background: url('../image/background-1.png');
+  transition: all 0.825s 0s cubic-bezier(.5,0,0,1);
+}
+*{
+  font-family: 'Noto Sans JP',sans-serif;
+  font-weight: 300;
+  transition: all 0.825s 0s cubic-bezier(.5,0,0,1);
+  outline: none;
+}
+body{
+  position: relative;
+  width: 100vw; height: 100vh;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: var(--background);
+  backdrop-filter: none;
+}
+
+dock-bar{
+  display: inline-block;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  overflow: hidden;
+  width: 100vw; height: 45px;
+  vertical-align: middle;
+  z-index: 25;
+  backdrop-filter: blur(30px) saturate(150%) brightness(80%);
+}
+dock-bar *{
+  position: relative;
+  display: inline-block;
+  top: 1px;
+  z-index: 999;
+  height: 35px;
+  vertical-align: middle;
+  margin: 5px; padding: 0;
+  font-size: 25px;
+  user-select: none;
+  text-align: center;
+}
+dock-bar *:not(time-el){
+  position: relative;
+  bottom: 2.5px;
+}
+date-el{
+  display: none;
+}
+time-el{
+  display: inline-block;
+  width: 75px;
+  border-radius: 25px;
+  background-color: #9999998d;
+}
+div#openLocker{
+  position: relative;
+  width: 30px; height: 30px;
+  background-image: url('../image/up.png');
+  background-size: cover;
+  background-color: #ffffff11;
+  border-radius: 100%;
+}
+app-icon{
+  display: inline-block;
+  width: 35px; height: 35px;
+  background-color: #888;
+  border-radius: 100%;
+  float: right;
+  background-position: center;
+  background-size: cover;
+}
+app-icon[data-name="calc"]{
+  background-image: url('../app/calc/icon.png');
+}
+app-icon[data-name="search"]{
+  background-image: url('../app/search/icon.png');
+}
+app-icon[data-name="commands"]{
+  background-image: url('../app/commands/icon.png');
+}
+app-icon[data-name="settings"]{
+  background-image: url('../app/settings/icon.png');
+}
+dock-bar>div#closeLocker{
+  display: none;
+}
+dock-bar#opened{
+  height: 100vh;
+  overflow: auto;
+}
+dock-bar#opened div#openLocker{
+  display: none;
+}
+dock-bar#opened div#closeLocker{
+  display: inline-block;
+  width: 30px; height: 30px;
+  background-image: url('../image/down.png');
+  background-size: cover;
+  background-color: #ffffff11;
+  border-radius: 100%;
+}
+dock-bar#opened time-el{
+  mix-blend-mode: hard-light;
+}
+dock-bar#opened date-el{
+  mix-blend-mode: difference;
+}
+locker-main{
+  display: none;
+  top: 30px;
+  height: calc(100% - 85px);
+  left: 0;
+  text-align: center;
+  overflow: auto;
+}
+locker-main app-icon{
+  display: none;
+  float: none;
+  margin: 0 auto;
+  width: 75px; height: 75px;
+}
+dock-bar#opened app-icon{
+  opacity: 1;
+  display: inline-block;
+}
+dock-bar#opened locker-main{
+  opacity: 1;
+  display: block;
+}
+div.app{
+  display: inline-block;
+  width: 150px; height: 110px;
+  padding: 5px;
+  margin: 5px 15px 15px 0;
+  overflow: hidden;
+  backdrop-filter: blur(30px) brightness(800%);
+  border-radius: 15px;
+  background-color: #44444433;
+}
+div.app p{
+  text-overflow: ellipsis;
+  display: block;
+  color: #ddd;
+  mix-blend-mode: difference;
+}
+
+input{
+  position: absolute;
+  display: inline-block;
+  text-align: left;
+  padding: 15px;
+  z-index: 9999;
+  outline: none;
+  border: none;
+  margin: 0;
+  height: 30px;
+  width: 400px;
+  font-size: 17.5px;
+  background-color: #dddddda0;
+  border-radius: 15px 0 0 15px;
+}
+button{
+  width: 30px; height: 30px;
+  background-image: url('../app/lib/search.png');
+  margin: 0;
+  border-radius: 0 15px 15px 0;
+  border: 0;
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #dddddda0;
+}
+dock-bar div#searching{
+  opacity: 0;
+  display: none;
+  position: fixed;
+  top: 40px;
+  margin: 0 calc(50vw - 215px);
+  height: 30px;
+  padding: 0;
+}
+dock-bar#opened div#searching{
+  opacity: 1;
+  display: block;
+}
+
+time-dialog{
+  display: none;
+  width: calc(100vw - 15px); height: calc(100vh - 60px);
+  background-color: #ffffff44;
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  text-align: center;
+}
+time-dialog time-el{
+  position: relative;
+  display: block;
+  background-color: #00000000;
+  font-size: 150px;
+  width: auto;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: -30px;
+}
+date-el{
+  margin: 0;
+  display: block;
+  font-size: 2em;
+}
+
+@media (max-width: 768px) {
+  dock-bar#opened>app-icon{
+    display: none;
+  }
+}
