@@ -1,4 +1,4 @@
-let wallName=['background-1.png','background-2.png','background-3.png'];
+let wallName=['background-1.png','background-2.png','background-3.png','background-4.png'];
 var wallpaperPath='';
 
 if(wallName.indexOf(node.getBack().background)!=-1){
@@ -16,6 +16,9 @@ switch (node.getBack().background){
     break;
   case 'background-3.png':
     document.querySelector('select').options[2].selected=true;
+    break;
+  case 'background-4.png':
+    document.querySelector('select').options[3].selected=true;
     break;
 }
 
