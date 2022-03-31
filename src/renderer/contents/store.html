@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>monoStore by monochrome.</title>
+	</head>
+	<body>
+		<script>
+			node.viewMonoStore();
+			window.addEventListener('beforeunload', () => {
+				node.closeMonoStore();
+			})
+		</script>
+	</body>
+</html>

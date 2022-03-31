@@ -1,0 +1,27 @@
+{
+  "name": "litest",
+  "version": "2.0.0",
+  "description": "The new version of Litest, It's pillars of monochrome.",
+  "main": "src/main/main.js",
+  "scripts": {
+    "test": "npx electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sorakime/Litest.git"
+  },
+  "keywords": [
+    "Litest",
+    "monochrome"
+  ],
+  "author": "Sorakime <sorakime-net-activities@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sorakime/Litest/issues"
+  },
+  "homepage": "https://www.monochrome.tk/mncr/project/litest/",
+  "devDependencies": {
+    "electron": "^17.2.0",
+    "electron-builder": "^22.14.13"
+  }
+}

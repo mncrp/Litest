@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>home</title>
+	</head>
+	<body>
+		<main>
+			<h1 id="clock-1"></h1>
+			<p id="clock-2"></p>
+			<p id="helloElement"></p>
+		</main>
+		<script>
+			const weekday = ['日', '月', '火', '水', '木', '金', '土'];
+			const helloElement = document.getElementById('helloElement');
+			function getTimes(type) {
+				let date = new Date();
+				if(type === 'minutes') {
+					if (date.getMinutes() < 10) {
+						return `0${date.getMinutes()}`;
+					}
+					return `${date.getMinutes()}`;
+				} else {
+					if (date.getSeconds() < 10) {
+						return `0${date.getSeconds()}`;
+					}
+					return `${date.getSeconds()}`;
+				}
+			}
+			function setTime() {
+				let date = new Date();
+				let hours = date.getHours();
+				document.getElementById('clock-1').innerText =
+					`${hours}:${getTimes('minutes')}:${getTimes(0)}`;
+				document.getElementById('clock-2').innerText =
+					`${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日${weekday[date.getDay()]}曜日`;
+				if (hours < 3 || hours > 17) {
+					helloElement.innerText = 'こんばんは';
+				} else if (hours > 3 && hours < 10) {
+					helloElement.innerText = 'おはようございます';
+				} else {
+					helloElement.innerText = 'こんにちは';
+				}
+			}
+			setTime();
+
+			setInterval(() => {
+				setTime();
+			}, 500);
+		</script>
+		<style>
+			main {
+				margin-left: 15px;
+			}
+			main * {
+				position: relative;
+			}
+			#clock-1 {
+				font-size: 100px;
+			}
+			#clock-2 {
+				font-size: 30px;
+				top: -20px;
+				margin: 0;
+			}
+			#helloElement {
+				top: -30px;
+				font-size: 30px;
+			}
+		</style>
+		<script src="../script/common.js"></script>
+	</body>
+</html>
