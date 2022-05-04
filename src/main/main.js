@@ -32,15 +32,16 @@ function nw() {
       e, url, isMain, httpResponseCode, httpStatusText, frameProcessId, frameRoutingId
     ) => {
       console.log(frameProcessId, frameRoutingId);
-    webFrameMain.fromId(frameProcessId, frameRoutingId).executeJavaScript(`
-      try {
-        const userData = '${app.getPath('userData')}';
-        node.installed(userData);
-      } catch(e) {
-        console.log(e);
-      }
-    `);
-  });
+      webFrameMain.fromId(frameProcessId, frameRoutingId).executeJavaScript(`
+        try {
+          const userData = '${app.getPath('userData')}';
+          node.installed(userData);
+        } catch(e) {
+          console.log(e);
+        }
+      `);
+    }
+  );
 
   // monoStore
   monoStore = new BrowserView({

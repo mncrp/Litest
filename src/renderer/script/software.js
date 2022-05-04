@@ -11,7 +11,7 @@ class Software {
       if (isExists) {
         return `
           <div class="one-software-update">
-            <a href="">更新</a>
+            <a href="javascript:update('${softwareId}')">更新</a>
           </div>
         `;
       } else {
