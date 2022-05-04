@@ -11,6 +11,6 @@ const ui = new ElementalVertical([
     id: 'store',
     display: 'ストア'
   }
-])
+]);
 
 document.getElementById('ui').innerHTML = ui.generateHTML();

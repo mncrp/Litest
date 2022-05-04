@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+main {
+  display: flex;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+main > * {
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid #ddd0;
+  background-color: #ccc0;
+  box-shadow: 0 0 0 #0000;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+main > *:is(:hover, :focus) {
+  box-shadow: 1px 1px 5px #bfbfbf55;
+  background-color: #eee;
+  border: 1px solid #ddde;
+}
+
+main > input {
+  width: 100%;
+  margin-right: 10px;
+}
+
+main > button {
+  min-width: 50px;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    color: #fff;
+  }
+  main > *:is(:hover, :focus) {
+    box-shadow: 1px 1px 5px #bfbfbf55;
+    background-color: #444;
+    border: 1px solid #666e;
+  }
+}

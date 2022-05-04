@@ -1,27 +1,33 @@
-function updateBtn(isExists) {
-	if (isExists) {
-		return `
-			<div class="one-software-update">
-				<a href="">更新</a>
-			</div>`;
-	} else {
-		return '';
-	}
-}
-
 class Software {
-	constructor(softwareTitle,
-							softwareVersion,
-							softwareId,
-							updateExists) {
+	constructor(
+    softwareTitle,
+    softwareVersion,
+    release,
+    softwareId,
+    icon,
+    updateExists
+  ) {
+    function updateBtn(isExists) {
+      if (isExists) {
+        return `
+          <div class="one-software-update">
+            <a href="">更新</a>
+          </div>
+        `;
+      } else {
+        return '';
+      }
+    };
 		this.title = softwareTitle;
 		this.version = softwareVersion;
+    this.release = release;
 		this.id = softwareId;
+    this.icon = icon;
 		this.updateExists = updateExists;
-		this.html = `
+		let textHtml = `
 			${document.body.innerHTML}
 			<div class="one-software" id="${softwareId}">
-				<div class="one-software-image"></div>
+				<div class="one-software-image" style="background-image: url('${this.icon}');"></div>
 				<div class="one-software-detail">
 					<h1>${this.title}</h1>
 					<h6>${this.version}</h6>
@@ -29,7 +35,11 @@ class Software {
 				${updateBtn(this.updateExists)}
 			</div>
 		`;
-		document.body.innerHTML = this.html;
+    try {
+      document.body.innerHTML = textHtml;
+    } catch(e) {
+      return true;
+    }
 	}
 
 	changeUpdateExists(isUpdateExists) {
@@ -45,11 +55,6 @@ class Software {
 				.remove();
 		}
 	}
-}
-
-let softwares = {
-	litest: new Software('Litest by monochrome.',
-											 'v.2.0.0',
-											 'litest-by-monochrome',
-											 true)
 };
+
+node.doInstalled();

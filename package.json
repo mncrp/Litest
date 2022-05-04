@@ -21,7 +21,11 @@
   },
   "homepage": "https://www.monochrome.tk/mncr/project/litest/",
   "devDependencies": {
-    "electron": "^17.2.0",
-    "electron-builder": "^22.14.13"
+    "electron": "^17.4.0",
+    "electron-builder": "^22.5.1"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "request": "^2.88.2"
   }
 }

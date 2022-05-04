@@ -35,7 +35,7 @@
 }
 .one-software > .one-software-update {
 	position: absolute;
-	right: 10px;
+	right: 20px;
 	top: 50%;
 	transform: translateY(-50%);
 }
@@ -46,4 +46,10 @@
 
 #litest-by-monochrome > .one-software-image{
 	background-image: url('../../image/icon.png');
+}
+
+@media (prefers-color-scheme: dark) {
+  .one-software-update > a {
+    color: #fff;
+  }
 }

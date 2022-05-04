@@ -21,6 +21,8 @@
 	font-size: 20px;
 	color: #000;
 	text-decoration: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 .elemental-vertical-navigation > a#clicked {
 	background-color: #dbdbdb;

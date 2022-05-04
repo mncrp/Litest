@@ -1,22 +1,31 @@
 // waryu氏のも素晴らしいんだけど使い方難しい←
 const {app} = require('electron');
-const confDir = `${app.getPath('userData')}/config.mncfg`;
+const path = {
+  config: `${app.getPath('userData')}/config.mncfg`,
+  appList: `${app.getPath('userData')}/applist.mncfg`
+};
 const fs = require('fs');
 
 module.exports = class {
   constructor() {
-    if (!fs.existsSync(confDir)){
+    if (!fs.existsSync(path.config)){
       fs.writeFileSync(
-        confDir,
+        path.config,
         fs.readFileSync(`${__dirname}/../default/config.mncfg`)
+      );
+    }
+    if (!fs.existsSync(path.appList)){
+      fs.writeFileSync(
+        path.appList,
+        fs.readFileSync(`${__dirname}/../default/applist.mncfg`)
       );
     }
   }
 
-  get(property) {
+  get(name, property) {
     if (property)
-      return JSON.parse(fs.readFileSync(confDir))[property];
+      return JSON.parse(fs.readFileSync(path[name]))[property];
     else
-      return JSON.parse(fs.readFileSync(confDir));
+      return JSON.parse(fs.readFileSync(path[name]));
   }
 }

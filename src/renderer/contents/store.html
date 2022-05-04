@@ -3,13 +3,22 @@
 	<head>
 		<meta charset="utf-8">
 		<title>monoStore by monochrome.</title>
+    <link rel="stylesheet" href="../style/store.css">
+    <link rel="stylesheet" href="../../proprietary/style/font.css">
 	</head>
 	<body>
+    <main>
+      <input type="text" placeholder="IDを指定する" id="id">
+      <button type="button" id="button">移動</button>
+    </main>
 		<script>
 			node.viewMonoStore();
 			window.addEventListener('beforeunload', () => {
 				node.closeMonoStore();
-			})
+			});
+      document.getElementById('button').addEventListener('click', () => {
+        node.moveStore(document.getElementById('id').value);
+      });
 		</script>
 	</body>
 </html>
