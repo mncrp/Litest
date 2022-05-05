@@ -1,14 +1,24 @@
 const {contextBridge, ipcRenderer, webFrame} = require('electron');
 const fs = require('fs');
 let path, id;
+const platform = (() => {
+  const os = process.platform;
+  if (os === 'darwin') return 'macOS';
+  if (os === 'win32') return 'windows';
+  if (os === 'linux') return 'linux';
+})();
 
 ipcRenderer.on('button', (e, userData, softwareId) => {
   path = userData;
   id = softwareId;
   webFrame.executeJavaScript(`
     const userData = '${userData}';
-    if(binaryUrl !== undefined) {
-      node.button(binaryUrl);
+    try{
+      if(binaryUrl !== undefined) {
+        node.button(binaryUrl);
+      }
+    } catch(e) {
+      console.log(e);
     }
   `);
 });
@@ -62,5 +72,43 @@ contextBridge.exposeInMainWorld('node', {
   moveToSoftwares: () => {
     ipcRenderer.invoke('closeMonoStore');
     ipcRenderer.invoke('moveToSoftwares');
+  },
+  install: (binaryUrl) => {
+    // asarをDL
+    const outFile = fs.createWriteStream(`${path}/software.dat`);
+    function downloaded() {
+      //const asar = require('asar');
+      //await asar.create
+    }
+    if (binaryUrl.indexOf('https://') === 0) {
+      const request = require('https').get(binaryUrl, (res) => {
+        res.pipe(outFile);
+        res.on('end', () => {
+          outFile.close();
+          downloaded();
+        })
+      });
+      request.on('err', (e) => {
+        alert('エラーが発生しました \n', e);
+        return false;
+      });
+    } else if (binaryUrl.indexOf('http://') === 0) {
+      const request = http.get(binaryUrl, (res) => {
+        res.pipe(outFile);
+        res.on('end', () => {
+          outFile.close();
+          downloaded();
+        })
+      });
+      request.on('err', (e) => {
+        alert('エラーが発生しました \n', e);
+        return false;
+      });
+    } else {
+      alert('エラーが発生しました？');
+    }
+
+    // asarをそのプラットフォーム用にビルド
+    // ここの処理をどうすればいいのかがわからん
   }
 });

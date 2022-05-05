@@ -59,7 +59,7 @@ function nw() {
       );
     }
   });
-  win.webContents.toggleDevTools();
+  monoStore.webContents.toggleDevTools();
 
   win.on('closed', () => {
     win = null;
@@ -94,8 +94,6 @@ ipcMain.handle('moveToSoftwares', () => {
     changeClickedMenu(0, 1);
     document.getElementsByClassName('elemental-vertical-frame')[0].src = "./contents/software.html";
   `);
-});
-ipcMain.handle('doInstalled', () => {
 });
 
 app.on('ready', nw);
